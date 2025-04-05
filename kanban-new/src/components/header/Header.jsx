@@ -32,7 +32,7 @@ export const Header = () => {
                 <input type="checkbox" className="checkbox" name="checkbox" />
               </div>
               <button type="button" className="_hover03">
-                <a href="#PopUser">Выйти</a>
+                <a href="#popExit">Выйти</a>
               </button>
             </div>
           </nav>
