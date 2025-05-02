@@ -1,38 +1,20 @@
-import { Card } from "../card/Card";
+import { statusList } from "../../../data";
 import { Column } from "../column/Column";
 
-export const Main = () => {
+export const Main = ({cards}) => {
+  
   return (
     <main className="main">
       <div className="container">
         <div className="main__block">
           <div className="main__content">
-            <Column
-              columnTitle={"Без статуса"}
-              cards={<Card color={"_green"} theme={"Research"} />}
-            />
-            <Column
-              columnTitle={"Нужно сделать"}
-              cards={<Card color={"_orange"} theme={"Web Design"} />}
-            />
-            <Column
-              columnTitle={"В работе"}
-              cards={
-                <>
-                  <Card color={"_green"} theme={"Research"} />
-                  <Card color={"_orange"} theme={"Web Design"} />
-                  <Card color={"_purple"} theme={"Copywriting"} />
-                </>
-              }
-            />
-            <Column
-              columnTitle={"Тестирование"}
-              cards={<Card color={"_green"} theme={"Research"} />}
-            />
-            <Column
-              columnTitle={"Готово"}
-              cards={<Card color={"_purple"} theme={"Copywriting"} />}
-            />
+            {statusList.map((status, id) => (
+              <Column 
+              key={id}
+              title={status}
+              cards={cards.filter((card) => card.status === status)}
+              ></Column>
+            ))}
           </div>
         </div>
       </div>
