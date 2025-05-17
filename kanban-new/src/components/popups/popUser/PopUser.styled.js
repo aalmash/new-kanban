@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import { Hover01, Hover03 } from "../../../Global.styled";
+import { Link } from "react-router-dom";
 
 export const PopExit = styled.div`
-  display: none;
   width: 100%;
   height: 100%;
   min-width: 320px;
@@ -11,6 +11,14 @@ export const PopExit = styled.div`
   top: 0;
   left: 0;
   z-index: 5;
+  opacity: 0;
+  animation: fadeIn 0.3s forwards;
+
+  @keyframes fadeIn {
+    to {
+      opacity: 1;
+    }
+  }
 `;
 export const PopExitContainer = styled.div`
   width: 100%;
@@ -33,6 +41,14 @@ export const PopExitBlock = styled.div`
   border-radius: 10px;
   border: 0.7px solid #d4dbe5;
   box-shadow: 0px 4px 67px -12px rgba(0, 0, 0, 0.13);
+  transform: translateY(-20px);
+  animation: slideUp 0.3s forwards;
+
+  @keyframes slideUp {
+    to {
+      transform: translateY(0);
+    }
+  }
 `;
 export const PopExitTtl = styled.div`
   h2 {
@@ -44,7 +60,6 @@ export const PopExitTtl = styled.div`
     margin-bottom: 20px;
   }
 `;
-// export const PopExitForm = styled.form``;
 export const PopExitFormGroup = styled.div`
   width: 100%;
   display: flex;
@@ -79,7 +94,7 @@ export const PopExitYes = styled.button`
 
   ${Hover01}
 `;
-export const PopExitNo = styled.button`
+export const PopExitNo = styled(Link)`
   width: 153px;
   height: 30px;
   background-color: transparent;
@@ -93,15 +108,7 @@ export const PopExitNo = styled.button`
   line-height: 21px;
   font-weight: 500;
   letter-spacing: -0.14px;
-  color: #ffffff;
-  a {
-    width: 100%;
-    height: 100%;
-    color: #565eef;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
+  color: #565eef;
 
   ${Hover03}
 `;

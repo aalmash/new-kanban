@@ -11,6 +11,7 @@ export const Column = ({ title, cards }) => {
         return (
           <Card
           key={card.id}
+          id={card.id}
           theme={card.theme}
           title={card.title}
           date={card.date}
