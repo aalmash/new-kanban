@@ -12,20 +12,22 @@ export const PopUser = ({ setIsAuth }) => {
   };
 
   return (
-    <S.PopExit>
-      <S.PopExitContainer>
-        <S.PopExitBlock>
-          <S.PopExitTtl>
-            <h2>Выйти из аккаунта?</h2>
-          </S.PopExitTtl>
-          <S.PopExitFormGroup>
-            <S.PopExitYes onClick={handleLogout}>Да, выйти</S.PopExitYes>
-            <S.PopExitNo as={Link} to={routes.main}>
-              Нет, остаться
-            </S.PopExitNo>
-          </S.PopExitFormGroup>
-        </S.PopExitBlock>
-      </S.PopExitContainer>
-    </S.PopExit>
+    <>
+      <S.PopExit id="popExit">
+        <S.PopExitContainer>
+          <S.PopExitBlock>
+            <S.PopExitTtl>
+              <h2>Выйти из аккаунта?</h2>
+            </S.PopExitTtl>
+            <S.PopExitFormGroup>
+              <S.PopExitYes onClick={handleLogout}>Да, выйти</S.PopExitYes>
+              <S.PopExitNo as={Link} to={routes.main}>
+                Нет, остаться
+              </S.PopExitNo>
+            </S.PopExitFormGroup>
+          </S.PopExitBlock>
+        </S.PopExitContainer>
+      </S.PopExit>
+    </>
   );
 };

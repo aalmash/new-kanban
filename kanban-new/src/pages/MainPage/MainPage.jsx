@@ -1,8 +1,7 @@
-// import "./App.css";
+import "../../App.css";
 import { useEffect, useState } from "react";
 import { cardList } from "../../../data";
 import { Wrapper } from "../../Global.styled";
-// import { PopBrowse } from "../../components/popups/popBrowse/PopBrowse";
 import { Header } from "../../components/header/Header";
 import { Main } from "../../components/main/Main";
 import { Outlet } from "react-router-dom";
@@ -26,21 +25,18 @@ export const MainPage = ({ theme, setTheme }) => {
     setIsLoading(true);
     setTimeout(() => {
       setIsLoading(false);
-    }, 2000);
+    }, 1000);
   }, []);
   return (
-    <>
-      <Wrapper>
-        
-        {/* <PopBrowse></PopBrowse> */}
-        <Header addCard={addCard} theme={theme} setTheme={setTheme}></Header>
-        <Outlet />
-        {isLoading ? (
-          <p className="loader">Данные загружаются...</p>
-        ) : (
-          <Main cards={cards}></Main>
-        )}
-      </Wrapper>
-    </>
+    <Wrapper>
+      <Outlet />
+      <Header addCard={addCard} theme={theme} setTheme={setTheme}></Header>
+
+      {isLoading ? (
+        <p className="loader">Данные загружаются...</p>
+      ) : (
+        <Main cards={cards}></Main>
+      )}
+    </Wrapper>
   );
 };
