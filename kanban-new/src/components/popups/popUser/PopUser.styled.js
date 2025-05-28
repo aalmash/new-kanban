@@ -3,7 +3,6 @@ import { Hover01, Hover03 } from "../../../Global.styled";
 import { Link } from "react-router-dom";
 
 export const PopExit = styled.div`
- display: block;
   width: 100%;
   height: 100%;
   min-width: 320px;

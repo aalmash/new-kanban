@@ -17,12 +17,13 @@ export const AppRoutes = ({ theme, setTheme }) => {
         <Route
           path={routes.main}
           element={<MainPage theme={theme} setTheme={setTheme} />}
-        />
-        <Route
-          path={routes.exit}
-          element={<ExitPage setIsAuth={setIsAuth} />}
-        />
-        <Route path={routes.card} element={<CardPage />} />
+        >
+          <Route
+            path={routes.exit}
+            element={<ExitPage setIsAuth={setIsAuth} />}
+          />
+          <Route path={routes.card} element={<CardPage />} />
+        </Route>
       </Route>
       <Route
         path={routes.login}
