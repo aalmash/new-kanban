@@ -7,7 +7,7 @@ export const PopUser = ({ setIsAuth }) => {
 
   const handleLogout = (e) => {
     e.preventDefault();
-    setIsAuth(false);
+    setIsAuth(null);
     navigate(routes.login);
   };
 
