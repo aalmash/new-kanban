@@ -39,7 +39,7 @@ export const MainPage = ({ theme, setTheme, isAuth }) => {
   return (
     <Wrapper>
       <Outlet />
-      <Header addCard={addCard} theme={theme} setTheme={setTheme}></Header>
+      <Header addCard={addCard} isAuth={isAuth} theme={theme} setTheme={setTheme}></Header>
 
       {isLoading ? (
         <p className="loader">Данные загружаются...</p>

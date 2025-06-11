@@ -27,6 +27,11 @@ export const RegistrationPage = ({ setIsAuth }) => {
       return;
     }
 
+    if (formData.password.length < 3) {
+      setAddError("Пароль должен содержать хотя бы 3 символа!");
+      return;
+    }
+
     register(formData)
       .then((res) => {
         setIsAuth(res.user);
@@ -80,9 +85,7 @@ export const RegistrationPage = ({ setIsAuth }) => {
                     setAddError(null);
                   }}
                 />
-                {addError && (
-                  <S.ErrorMessage>{addError}</S.ErrorMessage>
-                )}
+                {addError && <S.ErrorMessage>{addError}</S.ErrorMessage>}
                 <S.ModalBtn type="submit" id="SignUpEnter">
                   <a>Зарегистрироваться</a>{" "}
                 </S.ModalBtn>
