@@ -127,4 +127,9 @@ export const ModalFormGroup = styled.div`
     text-decoration: underline;
   }
 `;
-// export const Modal
+export const ErrorMessage = styled.p`
+  color: #e23333;
+  margin-top: 7px;
+  text-align: center;
+  font-size: 12px;
+`;
