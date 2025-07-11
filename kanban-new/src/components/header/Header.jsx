@@ -4,7 +4,7 @@ import { Container } from "../../Global.styled";
 import { Link } from "react-router-dom";
 import { routes } from "../../router/routes";
 
-export const Header = ({ addCard, setTheme, theme }) => {
+export const Header = ({ isAuth, addCard, setTheme, theme }) => {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleShowUser = () => {
@@ -28,12 +28,12 @@ export const Header = ({ addCard, setTheme, theme }) => {
             <S.HeaderBtn onClick={addCard} id="btnMainNew">
               <a>Создать новую задачу</a>
             </S.HeaderBtn>
-            <S.HeaderUser onClick={toggleShowUser}>Ivan Ivanov</S.HeaderUser>
+            <S.HeaderUser onClick={toggleShowUser}>{isAuth.name}</S.HeaderUser>
 
             {isOpen && (
               <S.HeaderPopUserSet id="user-set-target">
-                <S.PopUserSetName>Ivan Ivanov</S.PopUserSetName>
-                <S.PopUserSetMail>ivan.ivanov@gmail.com</S.PopUserSetMail>
+                <S.PopUserSetName>{isAuth.name}</S.PopUserSetName>
+                <S.PopUserSetMail>{isAuth.login}</S.PopUserSetMail>
                 <S.PopUserSetTheme onClick={toggleTheme}>
                   <p>Темная тема</p>
                   <input defaultChecked={theme === "darkTheme"}  type="checkbox" className="checkbox" name="checkbox" />

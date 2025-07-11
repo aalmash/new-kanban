@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom";
 import * as S from "./Card.styled";
 
-export const Card = ({ theme, date, id }) => {
+export const Card = ({ title ,theme, date, id }) => {
   const colors = {
-    "Web Design": "orange",
+    'Web Design': "orange",
     "Research": "purple",
     "Copywriting": "green",
   };
@@ -27,7 +27,7 @@ export const Card = ({ theme, date, id }) => {
         </S.CardGroup>
         <S.CardContent>
           <a href="#" target="_blank">
-            <S.CardTitle>Название задачи</S.CardTitle>
+            <S.CardTitle>{title}</S.CardTitle>
           </a>
           <S.CardDate>
             <svg
